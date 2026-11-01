@@ -1,14 +1,26 @@
 {
   "miner_dir": "C:\\Users\\YOU\\Downloads\\SRBMiner-Multi-3-8-3",
-  "both_bat": "C:\\Users\\YOU\\Downloads\\SRBMiner-Multi-3-8-3\\start-mining-pearl.bat",
-  "single_bat": "C:\\Users\\YOU\\Downloads\\SRBMiner-Multi-3-8-3\\start-mining-pearl-3060-only.bat",
   "algorithm": "pearlhash",
   "pool": "prl-sg.kryptex.network:7048",
   "wallet": "YOUR_WALLET.worker",
-  "free_gpus": [0],
-  "single_gpu": 1,
-  "names": {"0": "3070 Ti", "1": "3060"},
+
+  "profiles": [
+    {"name": "Both cards", "bat": "C:\\Users\\YOU\\Downloads\\SRBMiner-Multi-3-8-3\\start-mining-pearl.bat", "gpus": "all"},
+    {"name": "3060 only", "bat": "C:\\Users\\YOU\\Downloads\\SRBMiner-Multi-3-8-3\\start-mining-pearl-3060-only.bat", "gpus": [1]}
+  ],
+
+  "auto": {
+    "enabled": false,
+    "apps": ["VALORANT-Win64-Shipping.exe"],
+    "profile": "3060 only",
+    "back_to": "Both cards",
+    "back_after_s": 120
+  },
+
   "loop_match": "start-mining-pearl",
-  "watchdog_match": "pearl.py watch",
-  "api": "http://127.0.0.1:21550"
+  "watchdog_match": "",
+  "hot_c": 83,
+  "poll_s": 5,
+  "api": "http://127.0.0.1:21550",
+  "log_file": "miner_mode.log"
 }
